@@ -1,0 +1,243 @@
+fileFormatVersion: 2
+guid: 0df303a24fc5f894ba83a37131baf6b0
+timeCreated: 1530627352
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: africa
+    100002: africa_end
+    100004: arktika
+    100006: arktika_end
+    100008: Atmo
+    100010: australia
+    100012: australia_end
+    100014: Clouds
+    100016: earth
+    100018: //RootNode
+    100020: Earth.001
+    100022: Earth.007
+    100024: Earth.008
+    100026: eurasia
+    100028: eurasia_end
+    100030: nordAmerica
+    100032: nordAmerica_end
+    100034: root
+    100036: root_end
+    100038: southAmerica
+    100040: southAmerica_end
+    100042: Sun
+    100044: africa_point
+    100046: africa_point_end
+    100048: arktika_point
+    100050: arktika_point_end
+    100052: australia_point
+    100054: australia_point_end
+    100056: eurasia_point
+    100058: eurasia_point_end
+    100060: nordAmerica_point
+    100062: nordAmerica_point_end
+    100064: southAmerica_point
+    100066: southAmerica_point_end
+    100068: str1
+    100070: str1.001
+    100072: str1.002
+    100074: str1.003
+    100076: str1.004
+    100078: str1.005
+    100080: Earth.014
+    100082: grenland
+    100084: grenland_point
+    100086: grenland_point_end
+    100088: str1.006
+    400000: africa
+    400002: africa_end
+    400004: arktika
+    400006: arktika_end
+    400008: Atmo
+    400010: australia
+    400012: australia_end
+    400014: Clouds
+    400016: earth
+    400018: //RootNode
+    400020: Earth.001
+    400022: Earth.007
+    400024: Earth.008
+    400026: eurasia
+    400028: eurasia_end
+    400030: nordAmerica
+    400032: nordAmerica_end
+    400034: root
+    400036: root_end
+    400038: southAmerica
+    400040: southAmerica_end
+    400042: Sun
+    400044: africa_point
+    400046: africa_point_end
+    400048: arktika_point
+    400050: arktika_point_end
+    400052: australia_point
+    400054: australia_point_end
+    400056: eurasia_point
+    400058: eurasia_point_end
+    400060: nordAmerica_point
+    400062: nordAmerica_point_end
+    400064: southAmerica_point
+    400066: southAmerica_point_end
+    400068: str1
+    400070: str1.001
+    400072: str1.002
+    400074: str1.003
+    400076: str1.004
+    400078: str1.005
+    400080: Earth.014
+    400082: grenland
+    400084: grenland_point
+    400086: grenland_point_end
+    400088: str1.006
+    2100000: Arktik
+    2100002: Earth
+    2100004: Water
+    2100006: Clouds
+    2100008: Atmo
+    2100010: strelka
+    2300000: Atmo
+    2300002: Clouds
+    2300004: Earth.001
+    3300000: Atmo
+    3300002: Clouds
+    3300004: Earth.001
+    4300000: Earth.008
+    4300002: Earth.007
+    4300004: Earth.001
+    4300006: Clouds
+    4300008: Atmo
+    4300010: str1.005
+    4300012: str1.004
+    4300014: str1.003
+    4300016: str1.002
+    4300018: str1.001
+    4300020: str1
+    4300022: str1.006
+    4300024: Earth.014
+    7400000: earthAction
+    9500000: //RootNode
+    10800000: Sun
+    13700000: Earth.007
+    13700002: Earth.008
+    13700004: str1
+    13700006: str1.001
+    13700008: str1.002
+    13700010: str1.003
+    13700012: str1.004
+    13700014: str1.005
+    13700016: Earth.014
+    13700018: str1.006
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: earthAction
+      takeName: earth|earthAction
+      firstFrame: 0
+      lastFrame: 250
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
