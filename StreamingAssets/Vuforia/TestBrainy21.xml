@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="markercont" size="30.000000 21.878788" />
+    <ImageTarget name="markerMateric" size="30.000000 37.851562" />
+    <ImageTarget name="markerVulkan" size="30.000000 43.074936" />
     <ImageTarget name="stones" size="30.000000 21.000000" />
     <ImageTarget name="marker" size="30.000000 20.519751" />
     <ImageTarget name="111" size="30.000000 19.298246" />

@@ -32,6 +32,8 @@ public class BehaviourController : MonoBehaviour {
     public GameObject landscape;
     public GameObject lookAtLeft;
     public GameObject lookAtRight;
+    public GameObject razlom;
+    public float sinkRevert = 100;
 
     public Text debugText; 
 
@@ -167,6 +169,7 @@ public class BehaviourController : MonoBehaviour {
     public void EarthRoundLeft()
     {
         btnSinking.SetActive(false);
+        uvEarthMid.gameObject.GetComponent<SkinnedMeshRenderer>().SetBlendShapeWeight(0, 100);
         textTimer = 7.0f;
         if (isOnRight)
         {
@@ -183,6 +186,7 @@ public class BehaviourController : MonoBehaviour {
     public void EarthRoundRight()
     {
         btnRising.SetActive(false);
+        uvEarthMid.gameObject.GetComponent<SkinnedMeshRenderer>().SetBlendShapeWeight(0, 0);
         textTimer = 7.0f;
         if (isOnLeft)
         {
@@ -248,6 +252,7 @@ public class BehaviourController : MonoBehaviour {
             blendRising += blendSpeed;
 			UVMove (-1, -1);
 			animator.gameObject.GetComponent<AudioSource> ().enabled = true;
+            razlom.SetActive(true);
         }
 		else
 			animator.gameObject.GetComponent<AudioSource> ().enabled = false;
@@ -275,8 +280,11 @@ public class BehaviourController : MonoBehaviour {
         if (blendSinking < 100f)
         {
             earth.SetBlendShapeWeight(1, blendSinking);
+            uvEarthMid.gameObject.GetComponent<SkinnedMeshRenderer>().SetBlendShapeWeight(0, sinkRevert);
+            uvEarthMid.gameObject.GetComponent<SkinnedMeshRenderer>().SetBlendShapeWeight(1, blendSinking);
             arrowSinking.SetBlendShapeWeight(0, blendSinking);
             blendSinking += blendSpeed;
+            sinkRevert = sinkRevert - blendSpeed;
 			UVMove (1, -1);
 			animator.gameObject.GetComponent<AudioSource> ().enabled = true;
         }
@@ -286,6 +294,7 @@ public class BehaviourController : MonoBehaviour {
 
     public void RestartEvent()
     {
+        sinkRevert = 100;
         earth.SetBlendShapeWeight(0, 0);
         earth.SetBlendShapeWeight(1, 0);
         arrowRising.SetBlendShapeWeight(0, 0);
@@ -306,5 +315,6 @@ public class BehaviourController : MonoBehaviour {
         btnRising.SetActive(true);
         btnSinking.SetActive(true);
         InvokeRepeating("HandSinkingTimer", 2.0f, 2.0f);
+        razlom.SetActive(false);
     }
 }

@@ -90,7 +90,7 @@ public class TestController : MonoBehaviour
                {
                     panelTestTwoLandscape.SetActive(true);
                     buttonRightTwo = buttonRightTwo1;
-                    for (int i = 0; i <= buttonWrongTwo.Length; i++)
+                    for (int i = 0; i < buttonWrongTwo.Length; i++)
                     {
                         buttonWrongTwo[i] = buttonWrongTwo1[i];
                     }
@@ -100,7 +100,7 @@ public class TestController : MonoBehaviour
                 {
                     panelTestThreeLandscape.SetActive(true);
                     buttonRightThree = buttonRightThree1;
-                    for (int i = 0; i <= buttonwWrongThree.Length; i++)
+                    for (int i = 0; i < buttonwWrongThree.Length; i++)
                     {
                         buttonwWrongThree[i] = buttonwWrongThree1[i];
                     }
@@ -129,7 +129,7 @@ public class TestController : MonoBehaviour
                 {
                     panelTestTwoPortrait.SetActive(true);
                     buttonRightTwo = buttonRightTwo2;
-                    for (int i = 0; i <= buttonWrongTwo.Length; i++)
+                    for (int i = 0; i < buttonWrongTwo.Length; i++)
                     {
                         buttonWrongTwo[i] = buttonWrongTwo2[i];
                     }
@@ -139,7 +139,7 @@ public class TestController : MonoBehaviour
                 {
                     panelTestThreePortrait.SetActive(true);
                     buttonRightThree = buttonRightThree2;
-                    for (int i = 0; i <= buttonwWrongThree.Length; i++)
+                    for (int i = 0; i < buttonwWrongThree.Length; i++)
                     {
                         buttonwWrongThree[i] = buttonwWrongThree2[i];
                     }
@@ -166,7 +166,7 @@ public class TestController : MonoBehaviour
                 {
                     panelTestTwoPortrait.SetActive(true);
                     buttonRightTwo = buttonRightTwo2;
-                    for (int i = 0; i <= buttonWrongTwo.Length; i++)
+                    for (int i = 0; i < buttonWrongTwo.Length; i++)
                     {
                         buttonWrongTwo[i] = buttonWrongTwo2[i];
                     }
@@ -176,7 +176,7 @@ public class TestController : MonoBehaviour
                 {
                     panelTestThreePortrait.SetActive(true);
                     buttonRightThree = buttonRightThree2;
-                    for (int i = 0; i <= buttonwWrongThree.Length; i++)
+                    for (int i = 0; i < buttonwWrongThree.Length; i++)
                     {
                         buttonwWrongThree[i] = buttonwWrongThree2[i];
                     }
@@ -292,17 +292,17 @@ public class TestController : MonoBehaviour
         else if (testNum == 3)
         {
             tastTextTwo.text = "Cколько лет назад существовал всего один материк?";
-            buttonWrongTwo[1].GetComponentInChildren<Text>().text = "250 млн.";
-            buttonWrongTwo[2].GetComponentInChildren<Text>().text = "175 млн.";
-            buttonWrongTwo[3].GetComponentInChildren<Text>().text = "130 млн.";
+            buttonWrongTwo[0].GetComponentInChildren<Text>().text = "250 млн.";
+            buttonWrongTwo[1].GetComponentInChildren<Text>().text = "175 млн.";
+            buttonWrongTwo[2].GetComponentInChildren<Text>().text = "130 млн.";
             buttonRightTwo.GetComponentInChildren<Text>().text = "200 млн.";
         }
         else if (testNum == 4)
         {
             tastTextThree.text = "Почему магма вырывается наружу?";
-            buttonwWrongThree[1].GetComponentInChildren<Text>().text = "Из-за сближения материковых кор";
-            buttonwWrongThree[2].GetComponentInChildren<Text>().text = "Из-за слишком большого количества накопленной магмы";
-            buttonwWrongThree[3].GetComponentInChildren<Text>().text = "Из-за слабого атмосферного давления";
+            buttonwWrongThree[0].GetComponentInChildren<Text>().text = "Из-за сближения материковых кор";
+            buttonwWrongThree[1].GetComponentInChildren<Text>().text = "Из-за слишком большого количества накопленной магмы";
+            buttonwWrongThree[2].GetComponentInChildren<Text>().text = "Из-за слабого атмосферного давления";
             buttonRightThree.GetComponentInChildren<Text>().text = "Из-за влияния содержащихся в магме газов";
         }
     }

@@ -15,6 +15,7 @@ ModelImporter:
     100014: srt2
     100016: str1
     100018: Sun
+    100020: Earth.004
     400000: Atmo
     400002: Clouds
     400004: Earth
@@ -25,18 +26,22 @@ ModelImporter:
     400014: srt2
     400016: str1
     400018: Sun
+    400020: Earth.004
     2100000: ground
     2100002: strelka
     2100004: Clouds
     2100006: Atmo
     2100008: Earth
     2100010: MAGMA
+    2100012: Razlom
     2300000: Atmo
     2300002: Clouds
     2300004: Earth.001
+    2300006: Earth.004
     3300000: Atmo
     3300002: Clouds
     3300004: Earth.001
+    3300006: Earth.004
     4300000: Earth.003
     4300002: Earth.002
     4300004: srt2
@@ -45,6 +50,7 @@ ModelImporter:
     4300010: Atmo
     4300012: Earth.001
     4300014: Earth
+    4300016: Earth.004
     9500000: //RootNode
     10800000: Sun
     13700000: Earth

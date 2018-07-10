@@ -14,7 +14,6 @@ public class BehaviourControllerState2 : MonoBehaviour {
     public GameObject[] arrows;
     public GameObject[] stateTexts1;
     public GameObject[] stateTexts2;
-    [HideInInspector]
     public GameObject[] stateTexts;
     public GameObject[] titles;
     public Renderer antarktida;
@@ -58,6 +57,12 @@ public class BehaviourControllerState2 : MonoBehaviour {
 
     }
 
+    public void StartInteractiveTest()
+    {
+        this.gameObject.GetComponent<ContinentsTest>().enabled = true;
+        this.gameObject.GetComponent<ContinentsTest>().TestBegin();
+    }
+
     void ButtonResize1()
     {
         Debug.Log("ResizeButt1");
@@ -79,7 +84,7 @@ public class BehaviourControllerState2 : MonoBehaviour {
             if (!landscape.activeSelf)
             {
                 landscape.SetActive(true);
-                for(int i = 0; i < 4; i++)
+                for(int i = 0; i < 5; i++)
                 {
                     stateTexts[i] = stateTexts1[i];
                 }
@@ -92,7 +97,7 @@ public class BehaviourControllerState2 : MonoBehaviour {
             if (!portrait.activeSelf)
             {
                 portrait.SetActive(true);
-                for (int i = 0; i < 4; i++)
+                for (int i = 0; i < 5; i++)
                 {
                     stateTexts[i] = stateTexts2[i];
                 }
@@ -105,7 +110,7 @@ public class BehaviourControllerState2 : MonoBehaviour {
             if (!portrait.activeSelf)
             {
                 portrait.SetActive(true);
-                for (int i = 0; i < 4; i++)
+                for (int i = 0; i < 5; i++)
                 {
                     stateTexts[i] = stateTexts2[i];
                 }
@@ -202,7 +207,11 @@ public class BehaviourControllerState2 : MonoBehaviour {
         continentAnim.Play("earthAction", -1, 0f);
         //continentAnim.enabled = false;
         Invoke("EarthReset", 0.5f);
-        
+        this.gameObject.GetComponent<ContinentsTest>().continents.GetComponent<SkinnedMeshRenderer>().materials[0].color = Color.white;
+        this.gameObject.GetComponent<ContinentsTest>().continents.GetComponent<SkinnedMeshRenderer>().materials[1].color = Color.white;
+        this.gameObject.GetComponent<ContinentsTest>().enabled = false;
+        stateTexts[4].SetActive(false);
+
         stateTexts[0].SetActive(true);
     }
 

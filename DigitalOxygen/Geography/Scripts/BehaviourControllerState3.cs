@@ -180,6 +180,7 @@ public class BehaviourControllerState3 : MonoBehaviour {
 
     public void Reset()
     {
+        eruption.SetActive(false);
         titles.SetActive(true);
         eventState = 0;
         maskInside.SetActive(true);

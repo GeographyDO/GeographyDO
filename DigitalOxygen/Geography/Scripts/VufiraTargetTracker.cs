@@ -10,6 +10,7 @@ public class VufiraTargetTracker : MonoBehaviour, ITrackableEventHandler {
     public GameObject onTrackingFound;
     public GameObject onTrackingLost;
     public GameObject controller;
+    public GameObject vulcan;
 
     // Use this for initialization
     void Start () {
@@ -26,54 +27,57 @@ public class VufiraTargetTracker : MonoBehaviour, ITrackableEventHandler {
     public void OnTrackableStateChanged(
         TrackableBehaviour.Status previousStatus,
         TrackableBehaviour.Status newStatus)
-    {
-        if (newStatus == TrackableBehaviour.Status.DETECTED ||
+    {   if(!vulcan.activeSelf)
+        {
+            if (newStatus == TrackableBehaviour.Status.DETECTED ||
             newStatus == TrackableBehaviour.Status.TRACKED ||
             newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
-        {
-            onTrackingFound.SetActive(true);
-            onTrackingLost.SetActive(false);
-            //controller.pd.enabled = true;
-            if (controller.GetComponent<Animator>() != null)
             {
-                controller.GetComponent<Animator>().enabled = true;
-                controller.SetActive(true);
+                onTrackingFound.SetActive(true);
+                onTrackingLost.SetActive(false);
+                //controller.pd.enabled = true;
+                if (controller.GetComponent<Animator>() != null)
+                {
+                    controller.GetComponent<Animator>().enabled = true;
+                    controller.SetActive(true);
+
+                }
+                else
+                    controller.SetActive(true);
 
             }
-            else
-            controller.SetActive(true);
-
-        }
-        else if (previousStatus == TrackableBehaviour.Status.TRACKED &&
-                 newStatus == TrackableBehaviour.Status.NOT_FOUND)
-        {
-            onTrackingLost.SetActive(true);
-            onTrackingFound.SetActive(false);
-            //controller.pd.enabled = true;
-            if (controller.GetComponent<Animator>() != null)
+            else if (previousStatus == TrackableBehaviour.Status.TRACKED &&
+                     newStatus == TrackableBehaviour.Status.NOT_FOUND)
             {
-                controller.GetComponent<Animator>().enabled = false;
-                controller.SetActive(false);
-            }
-                
-            else
-                controller.SetActive(false);
-        }
-        else
-        {
-            onTrackingLost.SetActive(true);
-            onTrackingFound.SetActive(false);
-            //controller.pd.enabled = true;
-            if (controller.GetComponent<Animator>() != null)
-            {
-                controller.GetComponent<Animator>().enabled = false;
-                controller.SetActive(false);
-            }
-                
-            else
-                controller.SetActive(false);
+                onTrackingLost.SetActive(true);
+                onTrackingFound.SetActive(false);
+                //controller.pd.enabled = true;
+                if (controller.GetComponent<Animator>() != null)
+                {
+                    controller.GetComponent<Animator>().enabled = false;
+                    controller.SetActive(false);
+                }
 
+                else
+                    controller.SetActive(false);
+            }
+            else
+            {
+                onTrackingLost.SetActive(true);
+                onTrackingFound.SetActive(false);
+                //controller.pd.enabled = true;
+                if (controller.GetComponent<Animator>() != null)
+                {
+                    controller.GetComponent<Animator>().enabled = false;
+                    controller.SetActive(false);
+                }
+
+                else
+                    controller.SetActive(false);
+
+            }
         }
+        
 
     }
 }
