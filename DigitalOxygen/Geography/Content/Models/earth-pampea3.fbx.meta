@@ -101,6 +101,12 @@ ModelImporter:
     2100006: Clouds
     2100008: Atmo
     2100010: strelka
+    2100012: SAmerika
+    2100014: Asia
+    2100016: UAmerika
+    2100018: Avstraliya
+    2100020: Afrika
+    2100022: Gren
     2300000: Atmo
     2300002: Clouds
     2300004: Earth.001

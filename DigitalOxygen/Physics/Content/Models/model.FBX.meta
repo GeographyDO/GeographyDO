@@ -8,14 +8,19 @@ ModelImporter:
     100000: //RootNode
     100002: ball
     100004: Plane
+    100006: Plane002
     400000: //RootNode
     400002: ball
     400004: Plane
+    400006: Plane002
     2100000: ball
     2100002: plane
     2100004: plane2
+    2300000: Plane002
+    3300000: Plane002
     4300000: ball
     4300002: Plane
+    4300004: Plane002
     9500000: //RootNode
     13700000: ball
     13700002: Plane

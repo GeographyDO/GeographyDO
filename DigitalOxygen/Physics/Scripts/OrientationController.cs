@@ -6,6 +6,7 @@ public class OrientationController : MonoBehaviour {
 
     public GameObject landscape;
     public GameObject portrait;
+    public SceneController controller;
 
 	// Use this for initialization
 	void Start ()
@@ -22,6 +23,10 @@ public class OrientationController : MonoBehaviour {
             if (!landscape.activeSelf)
             {
                 landscape.SetActive(true);
+                controller.canvasTextInfo = controller.canvasTextInfo1;
+                controller.textTask = controller.textTask1;
+                controller.textUp = controller.textUp1;
+                controller.textDown = controller.textDown1;
 
             }
             portrait.SetActive(false);
@@ -31,6 +36,10 @@ public class OrientationController : MonoBehaviour {
             if (!portrait.activeSelf)
             {
                 portrait.SetActive(true);
+                controller.canvasTextInfo = controller.canvasTextInfo2;
+                controller.textTask = controller.textTask2;
+                controller.textUp = controller.textUp2;
+                controller.textDown = controller.textDown2;
             }
             landscape.SetActive(false);
         }
@@ -39,6 +48,10 @@ public class OrientationController : MonoBehaviour {
             if (!portrait.activeSelf)
             {
                 portrait.SetActive(true);
+                controller.canvasTextInfo = controller.canvasTextInfo2;
+                controller.textTask = controller.textTask2;
+                controller.textUp = controller.textUp2;
+                controller.textDown = controller.textDown2;
 
             }
             landscape.SetActive(false);

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class BehaviourControllerState3 : MonoBehaviour {
 
+    public GameObject exitBtn;
+    public GameObject resetBtn1;
+    public GameObject resetBtn2;
 
     public GameObject landscape;
     public GameObject portrait;
@@ -12,7 +15,7 @@ public class BehaviourControllerState3 : MonoBehaviour {
     public GameObject maskInside;
     public GameObject maskOutside;
     public GameObject section;
-    [HideInInspector]
+    //[HideInInspector]
     public GameObject[] textFields;
     public GameObject hand;
     public GameObject eruption;
@@ -26,9 +29,10 @@ public class BehaviourControllerState3 : MonoBehaviour {
     public Texture magmaTexture;
     public Texture coldMagmaTexture;
     public float offset;
-    public GameObject lava;
-    public GameObject muzzle;
-    public GameObject crator;
+    public GameObject titles;
+    public GameObject marks;
+    public GameObject rocksExplosion;
+   
 
 
 
@@ -66,18 +70,29 @@ public class BehaviourControllerState3 : MonoBehaviour {
             }
     }
 
+    void ButtonResize1()
+    {
+        resetBtn1.GetComponent<RectTransform>().sizeDelta = exitBtn.GetComponent<RectTransform>().sizeDelta;
+    }
+
+    void ButtonResize2()
+    {
+        resetBtn2.GetComponent<RectTransform>().sizeDelta = new Vector2(exitBtn.GetComponent<RectTransform>().sizeDelta.x, exitBtn.GetComponent<RectTransform>().sizeDelta.y);
+    }
+
     void OrientationPlaneChange(DeviceOrientation orientation)
     {
-        Debug.Log("123");
         if (orientation == DeviceOrientation.LandscapeRight || orientation == DeviceOrientation.LandscapeLeft)
         {
+            Debug.Log("123");
             if (!landscape.activeSelf)
             {
                 landscape.SetActive(true);
-                for (int i = 0; i < 5; i++)
+                for (int i = 0; i < 6; i++)
                 {
                     textFields[i] = textFields1[i];
                 }
+                ButtonResize1();
             }
             portrait.SetActive(false);
         }
@@ -86,10 +101,11 @@ public class BehaviourControllerState3 : MonoBehaviour {
             if (!portrait.activeSelf)
             {
                 portrait.SetActive(true);
-                for (int i = 0; i < 5; i++)
+                for (int i = 0; i < 6; i++)
                 {
                     textFields[i] = textFields2[i];
                 }
+                ButtonResize2();
             }
             landscape.SetActive(false);
         }
@@ -98,10 +114,11 @@ public class BehaviourControllerState3 : MonoBehaviour {
             if (!portrait.activeSelf)
             {
                 portrait.SetActive(true);
-                for (int i = 0; i < 5; i++)
+                for (int i = 0; i < 6; i++)
                 {
                     textFields[i] = textFields2[i];
                 }
+                ButtonResize2();
             }
             landscape.SetActive(false);
         }
@@ -163,9 +180,7 @@ public class BehaviourControllerState3 : MonoBehaviour {
 
     public void Reset()
     {
-        lava.SetActive(true);
-        muzzle.SetActive(true);
-        crator.SetActive(true);
+        titles.SetActive(true);
         eventState = 0;
         maskInside.SetActive(true);
         maskOutside.SetActive(true);
@@ -176,6 +191,7 @@ public class BehaviourControllerState3 : MonoBehaviour {
         earthAnim.enabled = true;
         earthAnim.Play("VolcanoAnim", -1, 0f);
         section.SetActive(true);
+        rocksExplosion.SetActive(false);
         foreach(GameObject text in textFields)
         {
             text.SetActive(false);

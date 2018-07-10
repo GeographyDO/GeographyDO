@@ -8,6 +8,10 @@ public class BehaviourController : MonoBehaviour {
 
     private GameObject textRising, textSinking, btnRising, btnSinking, handSinking, handRising;
 
+    public Button exitBtn;
+    public Button resetBtn1;
+    public Button resetBtn2;
+
     public GameObject earthSection;
     public GameObject textRising1;//
     public GameObject textSinking1; //
@@ -91,7 +95,19 @@ public class BehaviourController : MonoBehaviour {
 
 	}
 
-	void UVMove (float scale, float scaleMid)
+    void ButtonResize1()
+    {
+        Debug.Log("ResizeButt1");
+        resetBtn1.GetComponent<RectTransform>().sizeDelta = exitBtn.GetComponent<RectTransform>().sizeDelta;
+    }
+
+    void ButtonResize2()
+    {
+        Debug.Log("ResizeButt2");
+        resetBtn2.GetComponent<RectTransform>().sizeDelta = new Vector2(exitBtn.GetComponent<RectTransform>().sizeDelta.x, exitBtn.GetComponent<RectTransform>().sizeDelta.y) ;
+    }
+
+    void UVMove (float scale, float scaleMid)
 	{
 		uvOffset += (0.3f *uvAnimationRate * Time.deltaTime );
 		uvEarth.materials [0].SetTextureOffset ("_MainTex", scale * uvOffset);
@@ -101,7 +117,7 @@ public class BehaviourController : MonoBehaviour {
 
     void OrientationPlaneChange(DeviceOrientation orientation)
     {
-        if (orientation == DeviceOrientation.LandscapeRight || orientation == DeviceOrientation.LandscapeLeft)
+        if (orientation == DeviceOrientation.LandscapeRight || orientation == DeviceOrientation.LandscapeLeft || testStateOrientation == true)
         {
             if (!landscape.activeSelf)
             {
@@ -112,6 +128,7 @@ public class BehaviourController : MonoBehaviour {
                 btnRising = btnRising1;
                 handSinking = handSinking1;
                 handRising = handRising1;
+                ButtonResize1();
             }
             portrait.SetActive(false);
         }
@@ -126,6 +143,7 @@ public class BehaviourController : MonoBehaviour {
                 btnRising = btnRising2;
                 handSinking = handSinking2;
                 handRising = handRising2;
+                ButtonResize2();
             }
             landscape.SetActive(false);
         }
@@ -140,6 +158,7 @@ public class BehaviourController : MonoBehaviour {
                 btnRising = btnRising2;
                 handSinking = handSinking2;
                 handRising = handRising2;
+                ButtonResize2();
             }
             landscape.SetActive(false);
         }

@@ -16,8 +16,28 @@ public class SceneController : MonoBehaviour {
     public bool isGround = false;
     public BlendControl blendObj;
     public GameObject canvasText;
+    public Text textTask;
     public Text textPot;
     public Text textKin;
+    public Text textUp;
+    public Text textDown;
+    public GameObject canvasTextInfo;
+    public GameObject canvasTextInfo1;
+    public Text textTask1;
+    public Text textUp1;
+    public Text textDown1;
+    public GameObject canvasTextInfo2;
+    public Text textTask2;
+    public Text textUp2;
+    public Text textDown2;
+    public GameObject hand;
+    public GameObject marks;
+    public InteractiveMarks marksController;
+
+    private void Start()
+    {
+        InvokeRepeating("HandShowing", 2.0f, 2.0f);
+    }
 
     // Update is called once per frame
     void Update()
@@ -39,29 +59,34 @@ public class SceneController : MonoBehaviour {
                     }
                     else
                     {
+                        
                         up = true;
                         isGround = false;
                         uvOffset = new Vector3(0.0f, -0.3f);
                     }
                     isTap = false;
+                    CancelInvoke();
+                    canvasTextInfo.SetActive(false);
+                    textUp.gameObject.SetActive(false);
+                    hand.SetActive(false);
 
                 }
             }
 
         }
 
-
-
         if (down)
         {
             if (uvOffset.y > offsetMaxDown)
             {
-                uvOffset.y -= Time.deltaTime / 4f;
+                uvOffset.y -= Time.deltaTime / 6f;
                 meshBall.material.SetTextureOffset("_MainTex", uvOffset);
             }
             else
             {
                 down = false;
+                canvasTextInfo.SetActive(true);
+                textDown.gameObject.SetActive(true);
                StartCoroutine(Wait());
             }
         }
@@ -69,9 +94,9 @@ public class SceneController : MonoBehaviour {
         {
             if (uvOffset.y < offsetMaxUp)
             {
-                uvOffset.y += Time.deltaTime / 4f;
+                uvOffset.y += Time.deltaTime / 6f;
                 meshBall.material.SetTextureOffset("_MainTex", uvOffset);
-                rigBall.gameObject.transform.Translate(Vector3.forward * Time.deltaTime * 4);
+                rigBall.gameObject.transform.Translate(Vector3.forward * Time.deltaTime * 15);
             }
             else
             {
@@ -81,10 +106,44 @@ public class SceneController : MonoBehaviour {
                 isTap = true;
                 textKin.text = "E (к) = 0";
                 textPot.text = "E (п) = x";
+                Debug.Log("2234");
+                InvokeRepeating("HandShowing", 2.0f, 2.0f);
+                canvasTextInfo.SetActive(true);
+                textUp.gameObject.SetActive(true);
             }
         }
 
 
+    }
+
+    public void TestInteractive()
+    {
+        canvasText.SetActive(true);
+        textKin.enabled = false;
+        textPot.enabled = false;
+        rigBall.gameObject.SetActive(false);
+        marks.SetActive(true);
+        marksController.enabled = true;
+        textTask.gameObject.SetActive(true);
+ 
+    }
+
+    public void TestInteractiveStop()
+    {
+        textKin.enabled = true;
+        textPot.enabled = true;
+        rigBall.gameObject.SetActive(true);
+        marks.SetActive(false);
+        marksController.enabled = false;
+        textTask.gameObject.SetActive(false);
+    }
+
+    public void HandShowing()
+    {
+        if (hand.activeSelf)
+            hand.SetActive(false);
+        else
+            hand.SetActive(true);
     }
 
     public IEnumerator Wait()
@@ -98,6 +157,9 @@ public class SceneController : MonoBehaviour {
         meshBall.material.SetTextureOffset("_MainTex", new Vector2(0.0f,-0.3f));
         meshBall.gameObject.transform.position = new Vector3(meshBall.gameObject.transform.position.x, meshBall.gameObject.transform.position.y + 0.4f, meshBall.gameObject.transform.position.z);
         isTap = true;
+        canvasTextInfo.SetActive(false);
+        textDown.gameObject.SetActive(false);
+        InvokeRepeating("HandShowing", 2.0f, 2.0f);
 
     }
 }

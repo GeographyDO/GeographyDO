@@ -9,7 +9,8 @@ public class Volcano : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+        RocksNoExplosion();
+        controller.rocksExplosion.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -26,9 +27,6 @@ public class Volcano : MonoBehaviour {
 
     public void DisableTexts()
     {
-        controller.lava.SetActive(false);
-        controller.muzzle.SetActive(false);
-        controller.crator.SetActive(false);
     }
     public void SecondState()
     {
@@ -58,11 +56,27 @@ public class Volcano : MonoBehaviour {
     public void DisableEruption()
     {
         controller.eruption.SetActive(false);
+        RocksNoExplosion();
     }
 
     public void DisableMaskInsiide()
     {
         controller.isUVStarted = false;
         controller.maskInside.SetActive(false);
+    }
+
+    public void RocksExplosion()
+    {
+        controller.rocksExplosion.SetActive(true);
+        this.gameObject.GetComponent<Animator>().ResetTrigger("rocksPause");
+        this.gameObject.GetComponent<Animator>().SetTrigger("rocksPlay");
+        
+    }
+
+    public void RocksNoExplosion()
+    {
+        this.gameObject.GetComponent<Animator>().ResetTrigger("rocksPlay");
+        this.gameObject.GetComponent<Animator>().SetTrigger("rocksPause");
+         controller.rocksExplosion.SetActive(false);
     }
 }

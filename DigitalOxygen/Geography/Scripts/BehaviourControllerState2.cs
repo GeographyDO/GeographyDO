@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class BehaviourControllerState2 : MonoBehaviour {
 
+    public GameObject exitBtn;
+    public GameObject resetBtn1;
+    public GameObject resetBtn2;
+
     public GameObject landscape;
     public GameObject portrait;
     public Animator continentAnim;
@@ -54,6 +58,18 @@ public class BehaviourControllerState2 : MonoBehaviour {
 
     }
 
+    void ButtonResize1()
+    {
+        Debug.Log("ResizeButt1");
+        resetBtn1.GetComponent<RectTransform>().sizeDelta = exitBtn.GetComponent<RectTransform>().sizeDelta;
+    }
+
+    void ButtonResize2()
+    {
+        Debug.Log("ResizeButt2");
+        resetBtn2.GetComponent<RectTransform>().sizeDelta = new Vector2(exitBtn.GetComponent<RectTransform>().sizeDelta.x, exitBtn.GetComponent<RectTransform>().sizeDelta.y);
+    }
+
 
     void OrientationPlaneChange(DeviceOrientation orientation)
     {
@@ -67,6 +83,7 @@ public class BehaviourControllerState2 : MonoBehaviour {
                 {
                     stateTexts[i] = stateTexts1[i];
                 }
+                ButtonResize1();
             }
             portrait.SetActive(false);
         }
@@ -79,6 +96,7 @@ public class BehaviourControllerState2 : MonoBehaviour {
                 {
                     stateTexts[i] = stateTexts2[i];
                 }
+                ButtonResize2();
             }
             landscape.SetActive(false);
         }
@@ -91,6 +109,7 @@ public class BehaviourControllerState2 : MonoBehaviour {
                 {
                     stateTexts[i] = stateTexts2[i];
                 }
+                ButtonResize2();
             }
             landscape.SetActive(false);
         }

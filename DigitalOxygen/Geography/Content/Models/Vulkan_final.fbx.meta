@@ -12,6 +12,21 @@ ModelImporter:
     100008: ZBrush_defualt_group
     100010: ZBrush_defualt_group.001
     100012: ZBrush_defualt_group.002
+    100014: Bone
+    100016: Bone.001
+    100018: Bone.001_end
+    100020: Bone.002
+    100022: Bone.002_end
+    100024: Bone.003
+    100026: Bone.003_end
+    100028: Bone.004
+    100030: Bone.004_end
+    100032: Bone.005
+    100034: Bone.005_end
+    100036: Bone.006
+    100038: Bone.006_end
+    100040: Cube.002
+    100042: Rock_Rig
     400000: Cube
     400002: Plane.000
     400004: Plane.004
@@ -19,6 +34,21 @@ ModelImporter:
     400008: ZBrush_defualt_group
     400010: ZBrush_defualt_group.001
     400012: ZBrush_defualt_group.002
+    400014: Bone
+    400016: Bone.001
+    400018: Bone.001_end
+    400020: Bone.002
+    400022: Bone.002_end
+    400024: Bone.003
+    400026: Bone.003_end
+    400028: Bone.004
+    400030: Bone.004_end
+    400032: Bone.005
+    400034: Bone.005_end
+    400036: Bone.006
+    400038: Bone.006_end
+    400040: Cube.002
+    400042: Rock_Rig
     2100000: Material
     2100002: matVulkan
     2100004: No Name
@@ -28,18 +58,24 @@ ModelImporter:
     2300006: ZBrush_defualt_group
     2300008: ZBrush_defualt_group.001
     2300010: ZBrush_defualt_group.002
+    2300012: Cube.002
     3300000: Cube
     3300002: Plane.000
     3300004: Plane.004
     3300006: ZBrush_defualt_group
     3300008: ZBrush_defualt_group.001
     3300010: ZBrush_defualt_group.002
+    3300012: Cube.002
     4300000: ZBrush_defualt_group.002
     4300002: ZBrush_defualt_group.001
     4300004: ZBrush_defualt_group
     4300006: Cube
     4300008: Plane.000
     4300010: Plane.004
+    4300012: Cube.002
+    7400000: Rock_Rig|ActionRock
+    9500000: //RootNode
+    13700000: Cube.002
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -74,14 +110,42 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Rock_Rig|ActionRock
+      takeName: Rock_Rig|ActionRock
+      firstFrame: 0
+      lastFrame: 73
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -126,10 +190,10 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
