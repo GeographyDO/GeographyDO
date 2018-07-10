@@ -33,6 +33,9 @@ public class SceneController : MonoBehaviour {
     public GameObject hand;
     public GameObject marks;
     public InteractiveMarks marksController;
+    public GameObject testCross;
+    public GameObject testCross1;
+    public GameObject testCross2;
 
     private void Start()
     {
@@ -125,6 +128,7 @@ public class SceneController : MonoBehaviour {
         marks.SetActive(true);
         marksController.enabled = true;
         textTask.gameObject.SetActive(true);
+        testCross.SetActive(true);
  
     }
 
@@ -136,6 +140,7 @@ public class SceneController : MonoBehaviour {
         marks.SetActive(false);
         marksController.enabled = false;
         textTask.gameObject.SetActive(false);
+        testCross.SetActive(false);
     }
 
     public void HandShowing()

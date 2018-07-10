@@ -75,4 +75,16 @@ public class TestPhysicsController : MonoBehaviour {
         landscape.SetActive(false);
         test.SetActive(false);
     }
+
+    public void TestQuit()
+    {
+        foreach (GameObject button in buttons)
+        {
+            button.GetComponent<Button>().image.color = new Color32(255, 255, 255, 255);
+        }
+        vr.SetActive(true);
+        portrait.SetActive(false);
+        landscape.SetActive(false);
+        test.SetActive(false);
+    }
 }

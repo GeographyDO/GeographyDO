@@ -27,6 +27,7 @@ public class OrientationController : MonoBehaviour {
                 controller.textTask = controller.textTask1;
                 controller.textUp = controller.textUp1;
                 controller.textDown = controller.textDown1;
+                controller.testCross = controller.testCross1;
 
             }
             portrait.SetActive(false);
@@ -40,6 +41,7 @@ public class OrientationController : MonoBehaviour {
                 controller.textTask = controller.textTask2;
                 controller.textUp = controller.textUp2;
                 controller.textDown = controller.textDown2;
+                controller.testCross = controller.testCross2;
             }
             landscape.SetActive(false);
         }
@@ -52,6 +54,7 @@ public class OrientationController : MonoBehaviour {
                 controller.textTask = controller.textTask2;
                 controller.textUp = controller.textUp2;
                 controller.textDown = controller.textDown2;
+                controller.testCross = controller.testCross2;
 
             }
             landscape.SetActive(false);
